@@ -6,9 +6,9 @@ Gallery Extension
 </p>
 
 ## プロジェクト概要
-本プロジェクトは、シンプルな拡張機能として実装されています。  
-HTML, CSS, JavaScriptを用いて、基本的な拡張機能の機能を実装しています。  
-This project is implemented as a simple extension, developed using HTML, CSS, and JavaScript, demonstrating fundamental extension functionalities.
+本プロジェクトは、シンプルなブラウザ拡張機能として実装されています。  
+HTML, CSS, JavaScriptを用いて、URLから画像を取得し、ギャラリー表示する機能を実装しています。  
+This project is implemented as a simple browser extension, developed using HTML, CSS, and JavaScript, to fetch images from URLs and display them in a gallery.
 
 ## 機能
 - **背景スクリプト**: 拡張機能がバックグラウンドで実行され、ページの状態を監視します。  
@@ -17,6 +17,26 @@ This project is implemented as a simple extension, developed using HTML, CSS, an
   Content Script: Injects scripts into web pages to perform basic DOM manipulations.
 - **ポップアップ表示**: `index.html` により、ユーザーに拡張機能のUIを提供します。  
   Popup Display: Provides UI via `index.html` for user interaction.
+- **URLからの画像取得とギャラリー表示**: ユーザーが指定したURLから画像を取得し、ギャラリー形式で表示します。
+  Image acquisition and gallery display from URL: Fetches images from URLs specified by the user and displays them in a gallery format.
+- **PubMed検索機能**: PubMed APIを利用して、キーワードと雑誌名に基づいて論文を検索し、結果を表示します。
+  PubMed search function: Uses the PubMed API to search for articles based on keywords and journal names and displays the results.
+- **クリップボードからの画像URL追加機能**: クリップボードにコピーされた画像URLをワンクリックでギャラリーに追加できます。
+  Add image URL from clipboard function: Allows adding image URLs copied to the clipboard to the gallery with a single click.
+- **PDF表示機能**: PDFファイルのURLを指定すると、ギャラリー内でPDFを表示できます。
+  PDF display function: Allows displaying PDFs within the gallery by specifying the URL of the PDF file.
+- **ドラッグ&ドロップによる画像の並び替え機能**: ギャラリー内の画像をドラッグ&ドロップで並び替えることができます。
+  Drag & drop image reordering function: Allows reordering images in the gallery by drag and drop.
+- **コメント機能**: 各画像にコメントを追加できます。
+  Comment function: Allows adding comments to each image.
+- **エクスポート機能**: ギャラリーの画像URLとコメントデータをJSON形式でエクスポートできます。
+  Export function: Allows exporting image URLs and comment data from the gallery in JSON format.
+- **削除とUndo機能**: 画像の削除と削除の取り消し（Undo）が可能です。
+  Delete and Undo function: Allows deleting images and undoing deletions.
+- **コンテキストメニューからの画像追加機能**: 画像のコンテキストメニューからURLをコピーしてギャラリーに追加できます。
+  Add image function from context menu: Allows adding URLs from the image context menu to the gallery.
+- **キーボードショートカット**: クリップボードからの画像追加（Ctrl+Shift+V/Command+Shift+V）、削除のUndo（Ctrl+Z/Command+Z）をサポートしています。
+  Keyboard shortcuts: Supports adding images from the clipboard (Ctrl+Shift+V/Command+Shift+V) and undoing deletions (Ctrl+Z/Command+Z).
 
 ## 特徴
 - シンプルで直感的なコード構造  
@@ -45,17 +65,20 @@ Clone the repository and load it via Chrome's "Load unpacked extension" feature.
 HTML, CSS, JavaScriptを使用して開発しています。  
 After editing, verify the changes on Chrome.
 
-## コミットメッセージのルール
-コミットには絵文字を先頭に付け、日本語で変更内容を記述します。  
-For example: `✨ feat: 新機能追加`, `🐛 fix: バグ修正`.
+## 開発ルール
+- **DRY (Don't Repeat Yourself)**: 重複コードの排除を心掛け、再利用性を高める。
+- **責務の分離**: 各モジュール・関数は単一の責務を持つように設計する。
+- **KISS (Keep It Simple, Stupid)**: 可能な限りシンプルな設計を維持する。
+- **防御的プログラミング**: 入力値検証や例外処理を徹底し、堅牢なコードを書く。
+- **SOLID原則**: 拡張性と保守性を高めるため、SOLID原則に従った設計を行う。
 
-## ライセンス
-MITライセンス  
-MIT License
+## コミットガイドライン
+- コミットタイトルは絵文字で始め、日本語で変更内容を記述する。  
+  例: `✨ feat: 新機能追加`, `🐛 fix: バグ修正`
+- コミットメッセージは簡潔かつ具体的に記述する。
 
 ---
-このREADMEはプロジェクトの進行に合わせて更新されます。  
-This README will be updated as the project evolves.
+このREADMEはプロジェクトの進行に合わせて随時更新されます。
 
 ## リポジトリ / Repository
 GitHub: [eazygallery](https://github.com/yuki1217ats/eazygallery)
