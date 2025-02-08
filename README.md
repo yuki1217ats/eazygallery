@@ -10,6 +10,7 @@ Gallery Extension
 HTML, CSS, JavaScriptを用いて、URLから画像を取得し、ギャラリー表示する機能を実装しています。  
 This project is implemented as a simple browser extension, developed using HTML, CSS, and JavaScript, to fetch images from URLs and display them in a gallery.
 
+
 ## 機能
 - **背景スクリプト**: 拡張機能がバックグラウンドで実行され、ページの状態を監視します。  
   Background Script: Runs in the background to monitor page status.
@@ -60,6 +61,13 @@ Directory structure / Header image, scripts, and other resources.
 ## インストール方法
 1. リポジトリをクローンし、Chromeの「パッケージ化されていない拡張機能を読み込む」で展開します。  
 Clone the repository and load it via Chrome's "Load unpacked extension" feature.
+
+##　免責
+利用は自己責任でお願いします。
+画像取得は各URLに準拠してください。
+Use at your own risk.
+When obtaining images, please follow the policies of each respective URL.
+
 
 ## 開発
 HTML, CSS, JavaScriptを使用して開発しています。  
