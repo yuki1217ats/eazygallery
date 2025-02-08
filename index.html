@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>URL gallery</h1>
+    </header>
+    <main>
+        <div id="image-container">
+            <!-- Images will be added here -->
+        </div>
+        <input type="text" id="image-url" placeholder="Enter image URL">
+        <button id="add-image">Add Image</button>
+        <br>
+        <input type="text" id="search-keyword" placeholder="Enter search keyword">
+        <input type="text" id="search-journal" placeholder="Enter journal (optional)">
+        <input type="number" id="max-results" placeholder="Max results" value="10">
+        <button id="run-article-py">Search Articles</button>
+        <div id="article-py-result"></div>
+        <h2>Search Results</h2>
+        <table id="search-results">
+            <thead>
+                <tr>
+                    <th>PMID</th>
+                    <th>Title</th>
+                    <th>Journal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Search results will be added here -->
+            </tbody>
+        </table>
+        <h2>Load Image Data</h2>
+        <input type="file" id="file-input" accept=".json">
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

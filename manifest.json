@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Gallery Clipboard Adder",
+  "version": "1.0",
+  "description": "Global hotkey to add image URL from clipboard to the gallery",
+  "permissions": [
+    "clipboardRead",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "add-image-from-clipboard": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+V"
+      },
+      "description": "Add image URL from clipboard to gallery"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content_script.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}

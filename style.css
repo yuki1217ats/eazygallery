@@ -1,0 +1,154 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    display: none;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+#image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 32%; /* Changed to accommodate 3 images per row */
+    margin-bottom: 20px;
+    word-break: break-all; /* URLを複数行に分ける */
+}
+
+.image-wrapper img {
+    margin-bottom: 10px;
+    width: 100%; /* Ensure images fit within the wrapper */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.image-wrapper img:hover {
+    transform: scale(1.1);
+}
+
+.image-wrapper input[type="text"] {
+    margin-top: 5px;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#image-container img {
+    max-width: 200px;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+    background-color: #fff;
+    transition: transform 0.3s ease; /* Smooth transition for enlargement */
+}
+
+#image-container img.enlarged {
+    /*position: fixed;  Make the image cover the screen */
+    /*top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);*/
+    z-index: 1000; /* Ensure it appears above other elements */
+    background-color: rgba(0, 0, 0, 0.8); /* Dim the background */
+    transition: opacity 0.3s ease;
+    opacity: 1;
+    display: block;
+    margin: auto;
+}
+
+#image-container img.enlarged:not(:hover) {
+    opacity: 1;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    width: 200px;
+    margin-right: 10px;
+    margin-bottom: 10px; /* 下の間隔を追加 */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#article-py-result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Style for comment fields and checkboxes */
+.image-wrapper label {
+    margin-top: 10px;
+    display: block;
+    text-align: left;
+}
+
+.image-wrapper input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Style for batch comment input and button */
+.batch-comment-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.batch-comment-container textarea {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* Fullscreen styles */
+.fullscreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.fullscreen img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
