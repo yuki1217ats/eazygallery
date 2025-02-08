@@ -1,6 +1,6 @@
 chrome.commands.onCommand.addListener((command) => {
   if (command === "add-image-from-clipboard") {
-    const targetUrl = "file:///Users/atsushiyukimoto/Desktop/automatorpy/gallery/index.html";
+    const targetUrl = "file:///Users/index.html";
     chrome.tabs.query({}, (tabs) => {
       // すでにギャラリーページが開かれているかチェック
       let galleryTab = tabs.find(tab => tab.url === targetUrl);
